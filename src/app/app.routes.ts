@@ -4,6 +4,8 @@ import { CourseSchemaComponent } from './course-schema/course-schema.component';
 
 export const routes: Routes = [
     {path: "kurser", component: CoursePageComponent},
-    {path: "schema", component: CourseSchemaComponent}
-
+    {path: "schema", component: CourseSchemaComponent},
+    {path: '', redirectTo: '/kurser', pathMatch: 'full'},
+    {path: '**', redirectTo: '/kurser', pathMatch: 'full'}
 ];
+

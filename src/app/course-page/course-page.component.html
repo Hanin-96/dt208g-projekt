@@ -1,6 +1,28 @@
-<p>course-page works!</p>
+<div id="hero-img" [style.backgroundImage]="'url(' + students1Img + ')'">
+    <div class="img-color"></div>
+    <div class="hero-text">
+        <h1>I am John Doe</h1>
+        <p>And I'm a Photographer</p>
+    </div>
+</div>
 
-<ul>
-    <li *ngFor="let course of courseData">
-    {{ course.courseCode  }} : {{ course.courseName  }} </li>
-</ul>
+<!--<img [src]="students1Img" alt="Två studenter" id="img-students"> -->
+
+<table>
+    <tr>
+        <th>Kod</th>
+        <th>Kursnamn</th>
+        <th>Poäng</th>
+        <th>Ämne</th>
+        <th>Kursplan</th>
+        <th>Lägg till</th>
+    </tr>
+    <tr *ngFor="let course of courseData">
+        <td>{{ course.courseCode }}</td>
+        <td>{{ course.courseName }}</td>
+        <td>{{ course.points }}</td>
+        <td>{{ course.subject }}</td>
+        <td><a href="{{course.syllabus  }}" target="_blank"><fa-icon [icon]="faLink"></fa-icon></a></td>
+        <td><button>Lägg till</button></td>
+    </tr>
+</table>

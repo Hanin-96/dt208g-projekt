@@ -1,1 +1,30 @@
 /* You can add global styles to this file, and also import other style files */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+    font-family: "Arimo", sans-serif;
+}
+
+body {
+    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+}
+
+main {
+    width: 100%;
+    margin: 0 auto;
+}
+
+p {
+    font-size: 1.8rem;
+}
+
+h1 {
+    font-size: 4.2rem;
+}
