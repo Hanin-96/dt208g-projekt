@@ -1,0 +1,38 @@
+/*navbar*/
+nav {
+    background-color: #FFCF86;
+    box-shadow: 0px 2px 2px 0px rgba(30, 30, 30, 0.2);
+    padding: 2rem;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    font-size: 2rem;
+    align-items: center;
+}
+
+
+nav ul li a {
+    text-decoration: none;
+    padding: 2rem;
+    color: #1e1e1e;
+}
+
+
+
+nav ul li a:hover {
+    background-color: #F6A428;
+    box-shadow: 0px 2px 2px 0px rgba(30, 30, 30, 0.2);
+    cursor: pointer;
+    padding: 2rem;
+}
+
+li .active {
+    background-color: #F6A428;
+    box-shadow: 0px 2px 2px 0px rgba(30, 30, 30, 0.2);
+    padding: 2rem;
+}

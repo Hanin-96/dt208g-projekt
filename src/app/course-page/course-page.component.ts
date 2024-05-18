@@ -6,6 +6,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons';
 
 
+
+
 @Component({
   selector: 'app-course-page',
   standalone: true,
@@ -16,6 +18,9 @@ import { faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons';
 export class CoursePageComponent {
   //Initierar till tom array från interface
   courseData: Course[] = [];
+  filteredSubjects: string[] = [];
+  amountCourses: number = 0;
+
   faLink = faArrowUpRightFromSquare;
 
   constructor(private courseservice: CourseService) { }
@@ -23,10 +28,17 @@ export class CoursePageComponent {
   ngOnInit() {
     this.courseservice.getCourseData().subscribe(data => {
       this.courseData = data;
-      this.courseData = this.courseData.slice(0, 9);
+      this.courseData = this.courseData.slice(0, 20);
+      this.filteredSubjects = this.courseservice.getSubjects(this.courseData)
+
+      //Hämta totala antal kurser
+      this.amountCourses = this.courseData.length;
+
+
     })
   }
 
-  //Hero img
-  students1Img: string = "assets/img/CF017232.IIQ.p.jpg";
+
+
+
 }

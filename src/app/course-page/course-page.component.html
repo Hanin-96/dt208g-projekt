@@ -1,28 +1,39 @@
-<div id="hero-img" [style.backgroundImage]="'url(' + students1Img + ')'">
-    <div class="img-color"></div>
-    <div class="hero-text">
-        <h1>I am John Doe</h1>
-        <p>And I'm a Photographer</p>
+<div id="search-subject-wrap">
+    <div class="search-bar">
+        <label for="search">Filtrera kurser:</label>
+        <input type="search" id="search">
+    </div>
+
+    <div class="subject-bar">
+        <label for="subject">Ämnesområde</label>
+        <select name="subject" id="subject">
+            <option value="" *ngFor="let subject of filteredSubjects"> {{ subject }} </option>
+        </select>
     </div>
 </div>
 
-<!--<img [src]="students1Img" alt="Två studenter" id="img-students"> -->
+<div class="totalCourses">
+    <p>Listar <span>{{amountCourses}}</span> kurser av totalt <span>{{amountCourses}}</span></p>
+</div>
 
-<table>
-    <tr>
-        <th>Kod</th>
-        <th>Kursnamn</th>
-        <th>Poäng</th>
-        <th>Ämne</th>
-        <th>Kursplan</th>
-        <th>Lägg till</th>
-    </tr>
-    <tr *ngFor="let course of courseData">
-        <td>{{ course.courseCode }}</td>
-        <td>{{ course.courseName }}</td>
-        <td>{{ course.points }}</td>
-        <td>{{ course.subject }}</td>
-        <td><a href="{{course.syllabus  }}" target="_blank"><fa-icon [icon]="faLink"></fa-icon></a></td>
-        <td><button>Lägg till</button></td>
-    </tr>
-</table>
+
+<div class="table-wrap">
+    <table>
+        <tr>
+            <th>Kod</th>
+            <th>Kursnamn</th>
+            <th>Poäng</th>
+            <th>Ämne</th>
+            <th>Kursplan</th>
+            <th>Lägg till</th>
+        </tr>
+        <tr *ngFor="let course of courseData">
+            <td>{{ course.courseCode }}</td>
+            <td>{{ course.courseName }}</td>
+            <td>{{ course.points }}hp</td>
+            <td>{{ course.subject }}</td>
+            <td><a href="{{course.syllabus  }}" target="_blank"><fa-icon [icon]="faLink"></fa-icon></a></td>
+            <td><button>Lägg till</button></td>
+        </tr>
+    </table>
+</div>

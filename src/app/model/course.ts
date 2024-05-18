@@ -3,7 +3,7 @@ export interface Course {
     courseCode: string;
     courseName: string;
     points: number;
-    subject: "string";
+    subject: string;
     syllabus: string;
 
 }

@@ -18,4 +18,16 @@ export class CourseService {
     //http anrop
     return this.http.get<Course[]>(this.url);
   }
+
+  //Hämta och ta bort dubletter av ämnesområden
+  getSubjects(courseData: Course[]): string[] {
+    let uniqueSubjects: string[] = [];
+    courseData.forEach((course) => {
+      if (uniqueSubjects.includes(course.subject) == false) {
+        uniqueSubjects.push(course.subject);
+      }
+
+    });
+    return uniqueSubjects;
+  }
 }
