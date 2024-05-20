@@ -1,11 +1,12 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { RouterLink } from '@angular/router';
 
 
 @Component({
   selector: 'app-hero-img',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterLink],
   templateUrl: './hero-img.component.html',
   styleUrl: './hero-img.component.css'
 })
@@ -19,5 +20,8 @@ export class HeroImgComponent {
 
     //Logotyp 
     logoImg: string = "assets/img/logotyp.svg";
+
+    //Liten logo
+    miniLogoImg: string ="assets/img/minilogo.svg"
 
 }

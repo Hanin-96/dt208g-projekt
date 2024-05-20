@@ -38,7 +38,7 @@ export class CoursePageComponent {
       //Hämta totala antal kurser
       this.amountCourses = this.courseData.length;
 
-      this.filteredCourseData = this.courseData.slice(0, 20);
+      this.filteredCourseData = this.courseData.slice(0, 50);
       this.filteredSubjects = this.courseservice.getSubjects(this.courseData)
     })
   }

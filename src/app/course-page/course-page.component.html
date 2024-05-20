@@ -7,7 +7,7 @@
     <div class="subject-bar">
         <label for="subject">Ämnesområde</label>
         <select name="subject" id="subject">
-            <option value="" *ngFor="let subject of filteredSubjects"> {{ subject }} </option>
+            <option value="" *ngFor="let subject of filteredSubjects" type="option"> {{ subject }} </option>
         </select>
     </div>
 </div>
@@ -33,8 +33,12 @@
             <td>{{ course.courseName }}</td>
             <td>{{ course.points }}hp</td>
             <td>{{ course.subject }}</td>
-            <td><a href="{{course.syllabus  }}" target="_blank"><fa-icon [icon]="faLink"></fa-icon></a></td>
-            <td><button>Lägg till</button></td>
+            <td class="external-link">
+                <a href="{{course.syllabus}}" target="_blank">
+                    <fa-icon [icon]="faLink"></fa-icon>
+                </a>
+            </td>
+            <td><button class="btn-add-course">Lägg till</button></td>
         </tr>
     </table>
 </div>

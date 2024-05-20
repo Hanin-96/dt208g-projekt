@@ -30,6 +30,26 @@
     box-shadow: 0px 2px 2px 0px rgba(30, 30, 30, 0.2);
 }
 
+.search-bar input[type=search]:focus {
+    background-color: rgba(28, 57, 99, 0.15);
+    outline: none;
+}
+
+.subject-bar select>option {
+    background-color: rgba(28, 57, 99, 0.15);
+    outline: none;
+}
+
+.subject-bar select option:focus{
+    background-color: rgba(28, 57, 99, 0.15);
+    outline: none;
+}
+
+::selection {
+    color: #1e1e1e;
+    background: rgba(28, 57, 99, 0.15);
+  }
+
 .totalCourses {
     margin: 0 2rem;
 }
@@ -40,6 +60,7 @@
     width: 100%;
     padding: 1rem;
 }
+
 
 /*Table*/
 .table-wrap {
@@ -73,7 +94,27 @@ table a {
     color: #1e1e1e;
 }
 
-button {
-    padding: 0.5rem;
+.external-link {
+    transition: all 0.2s ease-out;
+    text-align: center;
+}
 
+.external-link:hover {
+    transform: scale(1.5);
+}
+
+/*btn lägg till*/
+.btn-add-course {
+    font-size: 2rem;
+    padding: 0.5rem 2rem;
+    background-color: #FFCF86;
+    border: none;
+    box-shadow: 0px 2px 2px 0px rgba(30, 30, 30, 0.2);
+    cursor: pointer;
+    transition: all 0.2s ease-out;
+}
+
+.btn-add-course:hover {
+    background-color: #F6A428;
+    transform: scale(1.1);
 }
