@@ -1,7 +1,7 @@
 <div id="search-subject-wrap">
     <div class="search-bar">
         <label for="search">Filtrera kurser:</label>
-        <input type="search" id="search">
+        <input type="search" id="search" [(ngModel)]="searchInput" (input)="searchFilter()">
     </div>
 
     <div class="subject-bar">
@@ -12,8 +12,9 @@
     </div>
 </div>
 
+
 <div class="totalCourses">
-    <p>Listar <span>{{amountCourses}}</span> kurser av totalt <span>{{amountCourses}}</span></p>
+    <p>Listar <span>{{filteredCourseData.length}}</span> kurser av totalt <span>{{amountCourses}}</span></p>
 </div>
 
 
@@ -27,7 +28,7 @@
             <th>Kursplan</th>
             <th>Lägg till</th>
         </tr>
-        <tr *ngFor="let course of courseData">
+        <tr *ngFor="let course of filteredCourseData">
             <td>{{ course.courseCode }}</td>
             <td>{{ course.courseName }}</td>
             <td>{{ course.points }}hp</td>
