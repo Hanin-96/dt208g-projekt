@@ -1,1 +1,30 @@
 
+<div class="table-wrap">
+    <table>
+        <tr>
+            <th>Kod</th>
+            <th>Kursnamn</th>
+            <th>Poäng</th>
+            <th>Ämne</th>
+            <th>Kursplan</th>
+            <th>Ta bort</th>
+        </tr>
+        <tr *ngFor="let course of scheduleCourseData">
+            <td>{{ course.courseCode }}</td>
+            <td>{{ course.courseName }}</td>
+            <td>{{ course.points }}hp</td>
+            <td>{{ course.subject }}</td>
+            <td class="external-link">
+                <a href="{{course.syllabus}}" target="_blank">
+                    <fa-icon [icon]="faLink"></fa-icon>
+                </a>
+            </td>
+            <td><button class="btn-delete" (click)="deleteCourseFromSchedule(course.courseCode)">Ta bort</button></td>
+        </tr>
+    </table>
+</div>
+
+<div class="schedule-text">
+    <p>Antal kurser: <span>{{scheduleCourseData.length}}</span></p>
+    <p>Total antal poäng: <span>{{courseTotalPoints()}}</span>hp</p>
+</div>

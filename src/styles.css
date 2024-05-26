@@ -28,3 +28,45 @@ p {
 h1 {
     font-size: 4.2rem;
 }
+
+/*Table styling*/
+
+/*Table*/
+.table-wrap {
+    margin: 2rem;
+}
+
+table {
+    border-collapse: collapse;
+    max-width: 1200px;
+    width: 100%;
+    margin: 2rem auto;
+    font-size: 1.8rem;
+}
+
+
+table th {
+    text-align: left;
+    padding: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    border: 1px solid rgb(194, 194, 194, 0.4);
+    box-shadow: 0px 2px 2px 0px rgba(30, 30, 30, 0.2);
+}
+
+table tr:not(:first-child) {
+    border-bottom: 1px solid rgb(194, 194, 194, 0.4);
+}
+
+table tr td {
+    padding: 1rem;
+}
+
+.external-link a {
+    color: #1e1e1e;
+}
+
+.external-link a:hover {
+    color: #F6A428;
+}
+

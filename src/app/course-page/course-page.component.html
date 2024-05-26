@@ -6,8 +6,9 @@
 
     <div class="subject-bar">
         <label for="subject">Ämnesområde</label>
-        <select name="subject" id="subject">
-            <option value="" *ngFor="let subject of filteredSubjects" type="option"> {{ subject }} </option>
+        <select name="subject" id="subject" [(ngModel)]="selectSubject" (ngModelChange)="searchFilter()">
+            <option value=""></option>
+            <option value="{{ subject }}" *ngFor="let subject of filteredSubjects" type="option"> {{ subject }} </option>
         </select>
     </div>
 </div>
@@ -21,10 +22,10 @@
 <div class="table-wrap">
     <table>
         <tr>
-            <th>Kod</th>
-            <th>Kursnamn</th>
-            <th>Poäng</th>
-            <th>Ämne</th>
+            <th (click)="sort('courseCode')">Kod</th>
+            <th (click)="sort('courseName')">Kursnamn</th>
+            <th (click)="sort('points')">Poäng</th>
+            <th (click)="sort('subject')">Ämne</th>
             <th>Kursplan</th>
             <th>Lägg till</th>
         </tr>
@@ -38,7 +39,7 @@
                     <fa-icon [icon]="faLink"></fa-icon>
                 </a>
             </td>
-            <td><button class="btn-add-course">Lägg till</button></td>
+            <td><button class="btn-add-course" [disabled]="isCourseAdded(course.courseCode)" (click)="saveCourseToSchedule(course)">Lägg till</button></td>
         </tr>
     </table>
 </div>
