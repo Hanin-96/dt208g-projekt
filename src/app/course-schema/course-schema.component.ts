@@ -40,7 +40,6 @@ export class CourseSchemaComponent {
 
     this.scheduleCourseData.forEach((course) => {
       totalPoints += course.points;
-
     });
     return totalPoints;
   }

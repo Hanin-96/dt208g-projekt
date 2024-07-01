@@ -29,6 +29,13 @@ h1 {
     font-size: 4.2rem;
 }
 
+/*Pagination*/
+.mat-mdc-paginator-container {
+    justify-content: flex-end;
+    max-width: 120rem;
+    margin: 0 auto;
+}
+
 /*Table styling*/
 
 /*Table*/
@@ -70,3 +77,59 @@ table tr td {
     color: #F6A428;
 }
 
+@media all and (max-width: 1000px) {
+    table th:first-child {
+        display: none;
+    }
+
+    table tr td:first-child {
+        display: none;
+    }
+
+    #search-subject-wrap {
+        flex-direction: column;
+        gap: 0 !important;
+    }
+
+    #search,
+    #subject {
+        max-width: 100rem;
+        width: 100% !important;
+
+    }
+}
+
+@media all and (max-width: 750px) {
+    table th:nth-child(3n+1) {
+        display: none;
+    }
+
+    table tr td:nth-child(3n+1) {
+        display: none;
+    }
+
+    table th:nth-child(2n+1) {
+        display: none;
+    }
+
+    table tr td:nth-child(2n+1) {
+        display: none;
+    }
+
+    button {
+        font-size: 1.8rem !important;
+    }
+
+    table {
+        font-size: 1.6rem;
+    }
+
+    nav {
+        padding-left: 0;
+    }
+
+    #hero-img {
+        background-position: right !important;
+    }
+
+}

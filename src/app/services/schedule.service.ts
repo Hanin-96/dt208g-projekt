@@ -17,6 +17,7 @@ export class ScheduleService {
     localStorage.setItem("schedule", savedSchedule);
   }
 
+  //Ta bort kurs
   deleteCourse(courseCode: string): void {
     this.currentSchedule = this.currentSchedule.filter((course) => {
       return course.courseCode != courseCode;
@@ -25,6 +26,7 @@ export class ScheduleService {
     localStorage.setItem("schedule", savedSchedule);
   }
 
+  //Hämta sparade kurs
   getSavedCourse(): void {
 
     let getCourse = localStorage.getItem("schedule") as string;

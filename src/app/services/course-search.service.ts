@@ -9,7 +9,6 @@ export class CourseSearchService {
   //Boolean för asc eller desc
   isAsc: boolean = true;
 
-  constructor() { }
   //Sökfunktion service som filtrerar utifrån sökinput på kurskod och kursnamn
   applySearchFilter(courseData: Course[], searchValue: string): Course[] {
     //Funktion tar emot courseData och sökinput
@@ -48,6 +47,8 @@ export class CourseSearchService {
     }
 
   }
+
+  //Sortera efter asc ordning beroende på kurskod, kursnamn, poäng och ämne
   private sortCourseDataAsc(filteredCourseData: Course[], type: string): Course[] {
     return filteredCourseData.sort((courseA, courseB) => {
       switch (type) {
@@ -71,7 +72,7 @@ export class CourseSearchService {
     });
   }
 
-  
+  //Sortera efter desc ordning beroende på kurskod, kursnamn, poäng och ämne
   private sortCourseDataDesc(filteredCourseData: Course[], type: string): Course[] {
     return filteredCourseData.sort((courseA, courseB) => {
       switch (type) {
@@ -90,8 +91,6 @@ export class CourseSearchService {
         default:
           return 0;
       }
-
-
     });
   }
 

@@ -29,7 +29,7 @@
             <th>Kursplan</th>
             <th>Lägg till</th>
         </tr>
-        <tr *ngFor="let course of filteredCourseData">
+        <tr *ngFor="let course of paginatedCourseData">
             <td>{{ course.courseCode }}</td>
             <td>{{ course.courseName }}</td>
             <td>{{ course.points }}hp</td>
@@ -42,4 +42,18 @@
             <td><button class="btn-add-course" [disabled]="isCourseAdded(course.courseCode)" (click)="saveCourseToSchedule(course)">Lägg till</button></td>
         </tr>
     </table>
+
+    <mat-paginator #paginator
+               class="demo-paginator"
+               (page)="handlePageEvent($event)"
+               [length]="length"
+               [pageSize]="pageSize"
+               [disabled]="false"
+               [showFirstLastButtons]="true"
+               [pageSizeOptions]="[]"
+               [hidePageSize]="true"
+               [pageIndex]="pageIndex"
+               aria-label="Select page">
+    </mat-paginator>
+
 </div>
