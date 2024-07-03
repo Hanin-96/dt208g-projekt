@@ -24,3 +24,8 @@
 .schedule-text span {
     font-weight: bold;
 }
+
+fa-icon {
+    margin-right: 0.5rem;
+    color: #1e1e1e;
+}

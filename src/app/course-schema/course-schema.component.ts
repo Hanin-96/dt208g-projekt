@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons';
+import { faArrowUpRightFromSquare, faTrash } from '@fortawesome/free-solid-svg-icons';
 import { Course } from '../model/course';
 import { ScheduleService } from '../services/schedule.service';
 import { CourseSearchService } from '../services/course-search.service';
@@ -17,8 +17,10 @@ import { CourseSearchService } from '../services/course-search.service';
 export class CourseSchemaComponent {
 
 
-  //url länk ikon
+  //Fontawesome ikoner
   faLink = faArrowUpRightFromSquare;
+  faTrash = faTrash;
+  
   scheduleCourseData: Course[] = [];
 
   constructor(private scheduleService: ScheduleService, private searchCourseService: CourseSearchService ) { }
