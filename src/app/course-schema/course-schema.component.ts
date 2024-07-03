@@ -4,6 +4,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons';
 import { Course } from '../model/course';
 import { ScheduleService } from '../services/schedule.service';
+import { CourseSearchService } from '../services/course-search.service';
 
 
 @Component({
@@ -20,7 +21,7 @@ export class CourseSchemaComponent {
   faLink = faArrowUpRightFromSquare;
   scheduleCourseData: Course[] = [];
 
-  constructor(private scheduleService: ScheduleService) { }
+  constructor(private scheduleService: ScheduleService, private searchCourseService: CourseSearchService ) { }
 
   ngOnInit(): void {
 
@@ -43,6 +44,11 @@ export class CourseSchemaComponent {
     });
     return totalPoints;
   }
+
+    //Sortera efter code, coursename och points
+    sort(type: string): void {
+      this.scheduleCourseData = this.searchCourseService.sortCourseData(this.scheduleCourseData, type)
+    }
 
 
 }

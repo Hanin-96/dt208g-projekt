@@ -41,8 +41,9 @@ export class CoursePageComponent {
   pageIndex: number = 0;
   length: number = 0;
   pageEvent: PageEvent | undefined;
-  pageSize: number = 10;
+  pageSize: number = 20;
 
+  //För att komma åt inbyggda funktioner i mat-paginator
   @ViewChild('paginator')
   matPaginator: MatPaginator | undefined;
 
@@ -87,11 +88,11 @@ export class CoursePageComponent {
 
   //Sortera efter code, coursename och points
   sort(type: string): void {
-    this.paginatedCourseData = this.courseSearchService.sortCourseData(this.paginatedCourseData, type)
+    this.paginatedCourseData = this.courseSearchService.sortCourseData(this.paginatedCourseData, type);
   }
 
   saveCourseToSchedule(saveCourse: Course) {
-    this.scheduleService.addCourse(saveCourse)
+    this.scheduleService.addCourse(saveCourse);
   }
 
   isCourseAdded(courseCode: string): boolean {
@@ -111,6 +112,7 @@ export class CoursePageComponent {
 
       //presenterar data utifrån start och slutindex
       this.paginatedCourseData = this.filteredCourseData.slice(startIndex, endIndex);
+ 
     }
 
   }
