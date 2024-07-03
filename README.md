@@ -7,7 +7,7 @@ Projektet i Moment 5 är skapad i Angular.
 
 ## Innehåll
 
-Uppgiften går ut på att skapa en  webbplats för ett fiktivt Universitet som hämtar kurs API från Mittuniversitet som extern länk och presenteras i en tabell på sidan. Det är både möjligt att sortera datan samt filtrera utifrån sökfras. Det är även möjligt för användare att lägga till kurser och skapa sitt eget kurschema utifrån valda kurser.
+Uppgiften går ut på att skapa en  webbplats för ett fiktivt Universitet som hämtar kurs API från Mittuniversitet som extern länk och presenteras i en tabell på sidan. Det är både möjligt att sortera datan samt filtrera utifrån sökfras. Det är även möjligt för användare att lägga till kurser via localstorage och skapa sitt eget kurschema utifrån valda kurser.
 
 ### HTTP Client
 För att göra anrop till kurs APIet används HTTP client i en skapad service för course i Angular. 
