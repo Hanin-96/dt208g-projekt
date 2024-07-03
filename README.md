@@ -21,5 +21,11 @@ Innehållet på sidorna har skapats i komponenter för coursePage samt courseSch
 ### Bindings
 Datan som skrivs ut på sidorna använder olika typer av bindings, Text interpolation, event binding och two way binding
 
-###Paginering
+### Services
+All hämtning av kursdata och funktionalitet görs i flera services
+
+### Interface
+Definiering av kursdata görs i Interface för course
+
+### Paginering
 Uppdelning av kurser på respektive sida har skapats med hjälp av pagination i Angular Material
