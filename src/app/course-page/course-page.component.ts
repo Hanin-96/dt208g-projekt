@@ -3,7 +3,7 @@ import { Course } from '../model/course';
 import { CourseService } from '../services/course.service';
 import { CommonModule } from '@angular/common';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons';
+import { faArrowUpRightFromSquare, faPlus } from '@fortawesome/free-solid-svg-icons';
 import { CourseSearchService } from '../services/course-search.service';
 import { FormsModule } from '@angular/forms';
 import { ScheduleService } from '../services/schedule.service';
@@ -29,7 +29,9 @@ export class CoursePageComponent {
   filteredSubjects: string[] = [];
   amountCourses: number = 0;
 
+  //Fontawesome ikoner
   faLink = faArrowUpRightFromSquare;
+  faPlus = faPlus;
 
   //variabel för filtrering av ämnesområden
   selectSubject: string = "";
