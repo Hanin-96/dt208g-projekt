@@ -39,6 +39,7 @@
                     <fa-icon [icon]="faLink"></fa-icon>
                 </a>
             </td>
+            <!--Det går ej att lägga till kurs om den redan finns i kurschemat-->
             <td><button class="btn-add-course" [disabled]="isCourseAdded(course.courseCode)" (click)="saveCourseToSchedule(course)"><fa-icon [icon]="faPlus"></fa-icon> Lägg till</button></td>
         </tr>
     </table>

@@ -58,7 +58,7 @@ export class CoursePageComponent {
       this.amountCourses = this.courseData.length;
 
       this.filteredCourseData = this.courseData;
-      this.paginatedCourseData = this.filteredCourseData.slice(0, this.pageSize);
+      this.pagination();
       this.filteredSubjects = this.courseSearchService.getSubjects(this.courseData);
 
       //Sätter totala längden för pagnering
@@ -81,22 +81,27 @@ export class CoursePageComponent {
     } else {
       this.filteredCourseData = this.courseData;
     }
-    
+
     // Ändrar längd utifrån längden på data som filtreras för paginering
     this.length = this.filteredCourseData.length;
     this.matPaginator?.firstPage();
-    this.paginatedCourseData = this.filteredCourseData.slice(0, this.pageSize);
+    this.pagination();
   }
 
   //Sortera efter code, coursename och points
   sort(type: string): void {
-    this.paginatedCourseData = this.courseSearchService.sortCourseData(this.paginatedCourseData, type);
+    this.filteredCourseData = this.courseSearchService.sortCourseData(this.filteredCourseData, type);
+    //Sortering visas som första sida
+    this.matPaginator?.firstPage();
+    this.pagination();
   }
 
+  //Spara kurs i kurschema
   saveCourseToSchedule(saveCourse: Course) {
     this.scheduleService.addCourse(saveCourse);
   }
 
+  //Kollar ifall en kurs redan är sparad
   isCourseAdded(courseCode: string): boolean {
     return this.scheduleService.containedCourse(courseCode);
   }
@@ -105,27 +110,15 @@ export class CoursePageComponent {
   handlePageEvent(e: PageEvent) {
     this.pageEvent = e;
     this.pageIndex = e.pageIndex;
-    if (this.pageIndex == 0) {
-      this.paginatedCourseData = this.filteredCourseData.slice(0, this.pageSize);
-    } else {
-      //Räknar ut startindex och slutindex för varje sida
-      let startIndex = this.pageIndex * this.pageSize;
-      let endIndex = (this.pageIndex + 1) * (this.pageSize);
-
-      //presenterar data utifrån start och slutindex
-      this.paginatedCourseData = this.filteredCourseData.slice(startIndex, endIndex);
- 
-    }
-
+    this.pagination();
   }
 
-
-
-
-
-
-
-
+  pagination(): void {
+    //paginering sker utifrån sortering
+    let startIndex = this.pageIndex * this.pageSize;
+    let endIndex = startIndex + this.pageSize;
+    this.paginatedCourseData = this.filteredCourseData.slice(startIndex, endIndex);
+  }
 
 
 

@@ -7,7 +7,7 @@ import { Course } from '../model/course';
 export class CourseSearchService {
 
   //Boolean för asc eller desc
-  isAsc: boolean = true;
+  isAsc: boolean = false;
 
   //Sökfunktion service som filtrerar utifrån sökinput på kurskod och kursnamn
   applySearchFilter(courseData: Course[], searchValue: string): Course[] {

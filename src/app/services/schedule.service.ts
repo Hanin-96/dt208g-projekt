@@ -20,6 +20,7 @@ export class ScheduleService {
   //Ta bort kurs
   deleteCourse(courseCode: string): void {
     this.currentSchedule = this.currentSchedule.filter((course) => {
+      //ta bort kurs utifrån kurskod
       return course.courseCode != courseCode;
     });
     let savedSchedule = JSON.stringify(this.currentSchedule)
