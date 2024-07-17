@@ -3,7 +3,7 @@
 Projektet i Moment 5 är skapad i Angular.
 
 ## Länk till webbplats
-[https://bright-semifreddo-f149a3.netlify.app/]
+[https://framtidensuniversitet.netlify.app]
 
 ## Innehåll
 
