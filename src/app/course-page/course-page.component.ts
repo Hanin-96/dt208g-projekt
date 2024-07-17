@@ -59,7 +59,7 @@ export class CoursePageComponent {
 
       this.filteredCourseData = this.courseData;
       this.paginatedCourseData = this.filteredCourseData.slice(0, this.pageSize);
-      this.filteredSubjects = this.courseService.getSubjects(this.courseData);
+      this.filteredSubjects = this.courseSearchService.getSubjects(this.courseData);
 
       //Sätter totala längden för pagnering
       this.length = this.courseData.length;

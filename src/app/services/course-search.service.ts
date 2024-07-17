@@ -33,6 +33,19 @@ export class CourseSearchService {
 
   }
 
+  
+  //Hämta och ta bort dubletter av ämnesområden
+  getSubjects(courseData: Course[]): string[] {
+    let uniqueSubjects: string[] = [];
+    courseData.forEach((course) => {
+      if (uniqueSubjects.includes(course.subject) == false) {
+        uniqueSubjects.push(course.subject);
+      }
+
+    });
+    return uniqueSubjects;
+  }
+
   //Sortera utifrån kurskod, kursnamn, poäng & ämnesområden
   sortCourseData(filteredCourseData: Course[], type: string): Course[] {
     if (this.isAsc == true) {

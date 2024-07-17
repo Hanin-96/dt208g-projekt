@@ -7,7 +7,7 @@
     <div class="subject-bar">
         <label for="subject">Ämnesområde</label>
         <select name="subject" id="subject" [(ngModel)]="selectSubject" (ngModelChange)="searchFilter()">
-            <option value=""></option>
+            <option value="">Alla</option>
             <option value="{{ subject }}" *ngFor="let subject of filteredSubjects" type="option"> {{ subject }} </option>
         </select>
     </div>
