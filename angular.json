@@ -23,8 +23,7 @@
             "assets": [
               "src/favicon.ico",
               "src/assets",
-              "src/_redirects",
-               "src/robots.txt"
+              "src/_redirects"
             ],
             "styles": [
               "src/custom-theme.scss",
@@ -85,8 +84,7 @@
             "assets": [
               "src/favicon.ico",
               "src/assets",
-              "src/_redirects",
-               "src/robots.txt"
+              "src/_redirects"
             ],
             "styles": [
               "src/styles.css"
