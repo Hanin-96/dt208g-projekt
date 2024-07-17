@@ -73,9 +73,6 @@ table tr td {
     color: #1e1e1e;
 }
 
-.external-link a:hover {
-    color: #F6A428;
-}
 
 @media screen and (max-width: 1000px) {
     table th:first-child {
