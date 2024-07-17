@@ -91,5 +91,10 @@ fa-icon {
 
 .external-link {
     text-align: center;
+    transition: all 0.2s ease-out;
+}
+
+.external-link:hover {
+    transform: scale(1.1);
 }
 
