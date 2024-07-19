@@ -107,9 +107,12 @@ export class CoursePageComponent {
   }
 
   //Paginering
+  //Innehåller information om sidbyte
   handlePageEvent(e: PageEvent) {
     this.pageEvent = e;
+    //Sidans index
     this.pageIndex = e.pageIndex;
+    //Gör anrop för att uppdatera kurslista beroende på nya sidindex
     this.pagination();
   }
 

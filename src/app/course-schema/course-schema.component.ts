@@ -32,15 +32,20 @@ export class CourseSchemaComponent {
 
   }
 
+  //Ta bort kurs från schemat, courseCode motsvarar ett id
   deleteCourseFromSchedule(courseCode: string) {
+    //Kallar på funktionen deleteCourse och skickar med kurskoden
     this.scheduleService.deleteCourse(courseCode);
+    //Hämtar nya aktuella schemat
     this.scheduleCourseData = this.scheduleService.getCurrentSchedule();
 
   }
 
+  //Visa totala hp poäng sammanlagt
   courseTotalPoints(): number {
     let totalPoints: number = 0;
 
+    //Den totala poäng är lika med summan när alla kursers poäng läggs ihop
     this.scheduleCourseData.forEach((course) => {
       totalPoints += course.points;
     });

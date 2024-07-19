@@ -38,6 +38,7 @@ export class CourseSearchService {
   getSubjects(courseData: Course[]): string[] {
     let uniqueSubjects: string[] = [];
     courseData.forEach((course) => {
+      //Om ämnesområde inte är inkluderad så ska den pushas in i arrayen
       if (uniqueSubjects.includes(course.subject) == false) {
         uniqueSubjects.push(course.subject);
       }
